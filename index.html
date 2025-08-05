@@ -1,337 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Aesthetic Portfolio</title>
-<link rel="stylesheet" href="style.css">
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Department - Home</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Internal CSS for Home Page Specific Styles */
+        
+        /* Attribute Selector */
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        input[type="text"]:focus, input[type="email"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        
+        /* Child Selector */
+        .stats-container > .stat-item {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:nth-child(odd) {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+        }
+        
+        /* Adjacent Sibling Selector */
+        .hero + .content-section {
+            margin-top: 0;
+            border-top: 4px solid #3498db;
+        }
+        
+        /* Additional Home Page Styles */
+        .welcome-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .quick-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .quick-link-btn {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .quick-link-btn:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+        
+        .news-ticker {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-<body onload="initializePage(); highlightNav();">
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav-menu">
+                <div class="logo">Computer Science Department</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="students.html">Students</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- NAVIGATION BAR -->
-  <nav id="navbar">
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <!-- <li><a href="C:\Users\NJ542WS\Desktop\pexels-matthew-montrone-230847-1324803.jpg">Photo</a></li> -->
-      <li><a href="#github">GitHub</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#login">Login</a></li>
-    </ul>
-  </nav>
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Computer Science Department</h1>
+                <p>Empowering the next generation of technology leaders through innovative education, cutting-edge research, and industry collaboration.</p>
+            </div>
+        </section>
 
-  <!-- HEADER -->
+        <div class="container">
+            <section class="content-section">
+                <div class="welcome-message">
+                    <h2>🎓 Excellence in Computer Science Education</h2>
+                    <p>Join our vibrant community of learners, researchers, and innovators shaping the future of technology.</p>
+                </div>
 
- <header class="hero-section" id="home">
-  <div class="hero-image">
-    <!-- <img src="images/my-photo.jpg" alt="My Profile Photo" class="hero-photo" /> -->
-     <!-- <img src="my-photo.jpg" alt="My Profile Photo" class="hero-photo" /> -->
-      <img src="images/my-photo.jpg" alt="My Profile Photo" class="hero-photo" />
+                <div class="quick-links">
+                    <a href="about.html" class="quick-link-btn">Learn About Us</a>
+                    <a href="faculty.html" class="quick-link-btn">Meet Our Faculty</a>
+                    <a href="courses.html" class="quick-link-btn">Explore Courses</a>
+                    <a href="students.html" class="quick-link-btn">Student Life</a>
+                </div>
+            </section>
 
+            <section class="content-section">
+                <h2 class="section-title">Department Statistics</h2>
+                <div class="grid stats-container">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Active Students</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>25+</h3>
+                        <p>Expert Faculty</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Research Labs</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>95%</h3>
+                        <p>Placement Rate</p>
+                    </div>
+                </div>
+            </section>
 
-  </div>
-  <div class="hero-text">
-    <h1>Hi, I'm Prasad Vitthal Ingle</h1>
-    <h2>Welcome to My Portfolio</h2>
-    <p id="greeting"></p>
-    <p id="current-time"></p>
-    <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-  </div>
-</header> 
+            <section class="content-section">
+                <h2 class="section-title">Latest News & Updates</h2>
+                <div class="news-ticker">
+                    <strong>📢 New:</strong> AI & Machine Learning Specialization program launched for 2025-26 academic year!
+                </div>
+                <div class="news-ticker">
+                    <strong>🏆 Achievement:</strong> Our students won first place in the National Coding Championship 2025.
+                </div>
+                <div class="news-ticker">
+                    <strong>🔬 Research:</strong> Department receives $2M grant for Quantum Computing research initiative.
+                </div>
+            </section>
 
-  <!-- INTRO -->
-<section class="card">
-  <p>Hello! I'm Prasad Ingle, a passionate web developer with a love for coding, design, and innovation.</p>
-  <p>I specialize in front-end development and enjoy bringing creative ideas to life through clean and efficient code. My journey in web development began with a fascination for how websites are built and how they function. Over the years, I have honed my skills in various technologies and frameworks, allowing me to create responsive and user-friendly web applications.</p>
-  <p>In addition to my technical skills, I have a keen eye for design. I believe that a great user experience is just as important as functionality. I strive to create visually appealing interfaces that not only look good but also enhance usability. My design philosophy revolves around simplicity and clarity, ensuring that users can navigate seamlessly through the applications I build.</p>
-  <p>Collaboration is another aspect of my work that I value greatly. I enjoy working with cross-functional teams, including designers, product managers, and other developers, to bring projects to fruition. I believe that effective communication and teamwork are essential for success in any project, and I always aim to contribute positively to the team dynamic.</p>
-  <p>Outside of coding, I am constantly exploring new technologies and trends in the web development landscape. I enjoy participating in online communities, attending workshops, and contributing to open-source projects. This continuous learning helps me stay updated and inspired, allowing me to bring fresh ideas to my work.</p>
-  <p>When I'm not coding, you can find me indulging in my hobbies, such as photography, gaming, and reading tech blogs. These interests not only provide a creative outlet but also fuel my passion for technology and innovation.</p>
-</section>
+            <section class="content-section">
+                <h2 class="section-title">Quick Contact</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>📧 Email Us</h3>
+                        <p> contact@sanjivani.org.in</p>
+                        <form style="margin-top: 1rem;">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <textarea placeholder="Your Message" rows="4" style="width: 100%; padding: 0.8rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 5px;"></textarea>
+                            <button type="submit" style="background: #3498db; color: white; padding: 0.8rem 2rem; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <h3>📍 Visit Us</h3>
+                        <p><strong>Address:</strong><br>
+                        Computer Science Building<br>
+                        Room 301, 3rd Floor<br>
+                        University Campus<br>
+                        City, State Kopargaon, Near Shirdi,</p>
+                        
+                        <p><strong>Office Hours:</strong><br>
+                        Monday - Friday: 9:00 AM - 5:00 PM<br>
+                        Saturday: 10:00 AM - 2:00 PM</p>
+                        
+                        <p><strong>Phone:</strong> +91 9130191301</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-
-  <!-- SKILLS -->
-<section id="skills" class="card">
-  <h2>Skills</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-    
-    <div class="skill-category">
-      <h3>Programming Languages</h3>
-      <ul>
-        <li>✓ C</li>
-        <li>✓ C++</li>
-        <li>✓ Java (basic)</li>
-      </ul>
-    </div>
-    
-    <div class="skill-category">
-      <h3>Web Development</h3>
-      <ul>
-        <li>✓ HTML</li>
-        <li>✓ CSS</li>
-        <li>✓ JavaScript</li>
-        <li>✓ Bootstrap</li>
-      </ul>
-    </div>
-
-    <div class="skill-category">
-      <h3>Database Management</h3>
-      <ul>
-        <li>✓ SQL</li>
-        <li>✓ MySQL Workbench</li>
-      </ul>
-    </div>
-
-    <div class="skill-category">
-      <h3>Version Control</h3>
-      <ul>
-        <li>✓ Git</li>
-        <li>✓ GitHub</li>
-      </ul>
-    </div>
-
-    <div class="skill-category">
-      <h3>Development Tools</h3>
-      <ul>
-        <li>✓ Visual Studio Code</li>
-        <li>✓ Eclipse</li>
-      </ul>
-    </div>
-
-    <div class="skill-category">
-      <h3>DSA Basics</h3>
-      <ul>
-        <li>✓ Arrays, Linked Lists</li>
-        <li>✓ Stacks, Queues</li>
-        <li>✓ Sorting & Searching</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-  <!-- HOBBIES -->
-<section id="hobbies" class="card">
-  <h2>Tech Hobbies</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-
-    <div class="hobby-card">
-      <h3>🛠️ Building Mini Projects</h3>
-      <p>I enjoy creating simple tools and apps to apply what I learn in real-time.</p>
-    </div>
-
-    <div class="hobby-card">
-      <h3>🌐 Open Source Contributions</h3>
-      <p>I'm exploring beginner-friendly GitHub repositories to understand collaborative development.</p>
-    </div>
-
-    <div class="hobby-card">
-      <h3>🧠 Learning New Programming Languages</h3>
-      <p>Always curious to try out new languages like Python and Java to expand my toolkit.</p>
-    </div>
-
-    <div class="hobby-card">
-      <h3>⚔️ Competitive Programming</h3>
-      <p>I sharpen my problem-solving skills on platforms like LeetCode.</p>
-    </div>
-
-    <div class="hobby-card">
-      <h3>📝 Blogging & Note-Taking</h3>
-      <p>I document my learning journey through digital notes and blog-style summaries.</p>
-    </div>
-
-    <div class="hobby-card">
-      <h3>🎥 Watching Tech Talks</h3>
-      <p>I enjoy watching developer talks, conference keynotes, and panel discussions to stay updated.</p>
-    </div>
-
-    <div class="hobby-card">
-      <h3>💻 Exploring GitHub Projects</h3>
-      <p>Browsing GitHub helps me discover exciting new tools, frameworks, and best practices.</p>
-    </div>
-
-  </div>
-</section>
-
-  <!-- TOOLS I USE -->
-<section id="tools" class="card">
-  <h2>Tools I Use</h2>
-  <div class="tools-grid">
-    <div class="tool-card">
-      <span class="tool-icon">🧑‍💻</span>
-      <h3>VS Code</h3>
-      <p>My go-to code editor for all web and backend development.</p>
-    </div>
-
-    <div class="tool-card">
-      <span class="tool-icon">🐙</span>
-      <h3>Git & GitHub</h3>
-      <p>Version control and collaboration for all my personal and academic projects.</p>
-    </div>
-
-    <div class="tool-card">
-      <span class="tool-icon">🎨</span>
-      <h3>Figma</h3>
-      <p>Designing UI mockups, wireframes, and collaborating on interfaces.</p>
-    </div>
-
-    <div class="tool-card">
-      <span class="tool-icon">🗃️</span>
-      <h3>MySQL Workbench</h3>
-      <p>For visualizing, managing, and interacting with databases.</p>
-    </div>
-
-    <div class="tool-card">
-      <span class="tool-icon">💻</span>
-      <h3>Eclipse IDE</h3>
-      <p>Used for learning Java and academic software development tasks.</p>
-    </div>
-
-    <div class="tool-card">
-      <span class="tool-icon">📚</span>
-      <h3>Notion</h3>
-      <p>For organizing study notes, planning projects, and productivity tracking.</p>
-    </div>
-  </div>
-</section>
-
-  <!-- PROJECTS OVERVIEW -->
-<section id="projects" class="card">
-  <h2>Projects Overview</h2>
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <h3>🌐 Personal Portfolio Website</h3>
-      <p>A modern, responsive portfolio with dark mode, smooth animations, and real-time greeting. Built using HTML, CSS, and JavaScript.</p>
-      <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h3>📝 Simple To-Do App</h3>
-      <p>A lightweight task manager using vanilla JavaScript. Features add/delete/update tasks and persistent storage via LocalStorage.</p>
-      <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h3>🧪 Online Exam Management System</h3>
-      <p>Web-based system for conducting online exams with secure login, question banks, and result analytics. Built using PHP, SQL HTML/CSS.</p>
-      <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
-    </div>
-
-  </div>
-</section>
-
-  <section class="education-section" id="education">
-  <h2>🎓 Education</h2>
-
-  <div class="edu-card">
-    <h3>📘 MCA - Master of Computer Applications</h3>
-    <p><strong>Institute:</strong> Sanjivani University, Kopargaon</p>
-    <p><strong>Year:</strong> 2025 – 2027</p>
-    <p><strong>Status:</strong> Currently Pursuing</p>
-  </div>
-
-  <div class="edu-card">
-    <h3>💻 B.Sc. in Computer Science</h3>
-    <p><strong>University:</strong> Dr. Babasaheb Ambedkar Marathwada University</p>
-    <p><strong>College:</strong> Vinayakrao Patil Mahavidyalaya, Vaijapur</p>
-    <p><strong>Year:</strong> 2022 – 2025</p>
-    <p><strong>CGPA:</strong> 7.77 / 10</p>
-    <p><strong>Grade:</strong> A+</p>
-    <p><strong>Percentage:</strong> 77.7%</p>
-  </div>
-
-  <div class="edu-card">
-    <h3>📗 HSC - Higher Secondary Certificate</h3>
-    <p><strong>Board:</strong> Maharashtra State Board of Secondary and Higher Secondary Education, Pune</p>
-    <p><strong>Year:</strong> 2022</p>
-    <p><strong>Percentage:</strong> 62.33%</p>
-  </div>
-
-  <div class="edu-card">
-    <h3>📘 SSC - Secondary School Certificate</h3>
-    <p><strong>Board:</strong> Maharashtra State Board of Secondary and Higher Secondary Education, Pune</p>
-    <p><strong>Year:</strong> 2020</p>
-    <p><strong>Percentage:</strong> 77.00%</p>
-  </div>
-</section>
-
-</section>
-
-
-  <!-- CERTIFICATIONS -->
-  <section class="certifications-section" id="certifications">
-  <h2>📜 Certifications</h2>
-  <div class="cert-placeholder">
-    <p>No certifications yet, but I’m actively learning and working towards industry-recognized credentials in web development and software engineering.</p>
-    <p class="coming-soon">🎯 Coming Soon: Frontend & Backend Dev Certifications!</p>
-  </div>
-</section>
-
-
-  <!-- EXPERIENCE -->
-  <section class="experience-section" id="experience">
-  <h2>💼 Experience</h2>
-  <div class="experience-placeholder">
-    <p>I’m currently seeking internship or entry-level opportunities to gain real-world experience and apply my skills in web development, programming, and software projects.</p>
-    <p class="coming-soon">🚀 Looking forward to my first professional opportunity!</p>
-  </div>
-</section>
-
-
-  <!-- PHOTO
-  <section id="photo" class="card">
-    <h2>My Photo</h2>
-    <img src="https://via.placeholder.com/200" alt="prasad ingle">
-  </section> -->
-
-  <!-- GITHUB -->
-  <section id="github" class="card">
-    <h2>Visit My GitHub</h2>
-    <p><a href="https://github.com/prasad-ingle123" target="_blank" rel="noopener noreferrer">Click here to view my GitHub profile</a></p>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="card">
-    <h2>Contact Me</h2>
-    <form id="contactForm" action="https://formspree.io/f/mwkajgqk" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      
-      <input type="submit" value="Send Message">
-    </form>
-  </section>
-
-  <!-- LOGIN -->
-  <section id="login" class="card">
-    <h2>Login</h2>
-    <form id="loginForm" onsubmit="return handleLogin(event);">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-      
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      
-      <input type="submit" value="Login">
-    </form>
-  </section>
-
- <script src="script.js"></script>
-
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025-26 Computer Science Department. All rights reserved. | Designed with ❤️ for education</p>
+        </div>
+    </footer>
 </body>
 </html>
