@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Department - Home</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Internal CSS for Home Page Specific Styles */
+        
+        /* Attribute Selector */
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        input[type="text"]:focus, input[type="email"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        
+        /* Child Selector */
+        .stats-container > .stat-item {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:nth-child(odd) {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+        }
+        
+        /* Adjacent Sibling Selector */
+        .hero + .content-section {
+            margin-top: 0;
+            border-top: 4px solid #3498db;
+        }
+        
+        /* Additional Home Page Styles */
+        .welcome-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .quick-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .quick-link-btn {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .quick-link-btn:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+        
+        .news-ticker {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav-menu">
+                <div class="logo">Computer Science Department</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="students.html">Students</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Computer Science Department</h1>
+                <p>Empowering the next generation of technology leaders through innovative education, cutting-edge research, and industry collaboration.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="content-section">
+                <div class="welcome-message">
+                    <h2>🎓 Excellence in Computer Science Education</h2>
+                    <p>Join our vibrant community of learners, researchers, and innovators shaping the future of technology.</p>
+                </div>
+
+                <div class="quick-links">
+                    <a href="about.html" class="quick-link-btn">Learn About Us</a>
+                    <a href="faculty.html" class="quick-link-btn">Meet Our Faculty</a>
+                    <a href="courses.html" class="quick-link-btn">Explore Courses</a>
+                    <a href="students.html" class="quick-link-btn">Student Life</a>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Department Statistics</h2>
+                <div class="grid stats-container">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Active Students</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>25+</h3>
+                        <p>Expert Faculty</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Research Labs</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>95%</h3>
+                        <p>Placement Rate</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Latest News & Updates</h2>
+                <div class="news-ticker">
+                    <strong>📢 New:</strong> AI & Machine Learning Specialization program launched for 2025-26 academic year!
+                </div>
+                <div class="news-ticker">
+                    <strong>🏆 Achievement:</strong> Our students won first place in the National Coding Championship 2025.
+                </div>
+                <div class="news-ticker">
+                    <strong>🔬 Research:</strong> Department receives $2M grant for Quantum Computing research initiative.
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Quick Contact</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>📧 Email Us</h3>
+                        <p> contact@sanjivani.org.in</p>
+                        <form style="margin-top: 1rem;">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <textarea placeholder="Your Message" rows="4" style="width: 100%; padding: 0.8rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 5px;"></textarea>
+                            <button type="submit" style="background: #3498db; color: white; padding: 0.8rem 2rem; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <h3>📍 Visit Us</h3>
+                        <p><strong>Address:</strong><br>
+                        Computer Science Building<br>
+                        Room 301, 3rd Floor<br>
+                        University Campus<br>
+                        City, State Kopargaon, Near Shirdi,</p>
+                        
+                        <p><strong>Office Hours:</strong><br>
+                        Monday - Friday: 9:00 AM - 5:00 PM<br>
+                        Saturday: 10:00 AM - 2:00 PM</p>
+                        
+                        <p><strong>Phone:</strong> +91 9130191301</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025-26 Computer Science Department. All rights reserved. | Designed with ❤️ for education</p>
+        </div>
+    </footer>
+</body>
+</html>
